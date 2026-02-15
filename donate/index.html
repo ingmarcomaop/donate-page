@@ -1,0 +1,139 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Donate • Mobile Call Rejecter</title>
+  <meta name="description" content="Apoya el desarrollo de Mobile Call Rejecter con PayPal, Bancolombia o USDT (TRC20)." />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+  <header class="top">
+    <div class="brand">
+      <div class="logo">MCR</div>
+      <div class="titles">
+        <h1>Apoya el proyecto</h1>
+        <p>Tu donación mantiene la app viva, libre de spam y en mejora constante 💙</p>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+    <!-- Future ad slot (optional) -->
+    <section class="ad-slot" aria-label="Ad slot (future)">
+      <!-- Reserved for future ads (e.g., AdSense). Keep empty for now. -->
+    </section>
+
+    <!-- Methods grid: add more cards later easily -->
+    <section class="grid" aria-label="Métodos de donación">
+
+      <!-- PayPal -->
+      <article class="card">
+        <div class="card-head">
+          <h2>PayPal</h2>
+          <span class="tag">Recomendado</span>
+        </div>
+        <p class="muted">
+          Donación rápida y segura. Puedes usar tarjeta o saldo PayPal.
+        </p>
+        <a class="btn" href="https://www.paypal.com/donate/?hosted_button_id=PDC6L9BHDVUHJ" target="_blank" rel="noopener">
+          Donar con PayPal
+        </a>
+      </article>
+
+      <!-- Bancolombia QR -->
+      <article class="card">
+        <div class="card-head">
+          <h2>Bancolombia</h2>
+          <span class="tag ghost">QR</span>
+        </div>
+        <p class="muted">Escanea el QR para donar desde tu app bancaria.</p>
+
+        <div class="qr-wrap">
+          <img src="assets/qr-bancolombia.png" alt="QR Bancolombia" loading="lazy" />
+        </div>
+
+        <div class="row">
+          <button class="btn secondary" type="button" onclick="openImage('assets/qr-bancolombia.png')">
+            Ver en grande
+          </button>
+        </div>
+      </article>
+
+      <!-- USDT TRC20 -->
+      <article class="card">
+        <div class="card-head">
+          <h2>USDT (TRC20)</h2>
+          <span class="tag warn">Verifica red</span>
+        </div>
+
+        <p class="muted">
+          <strong>Importante:</strong> envía únicamente por la red <strong>TRC20</strong>.
+          Si envías por otra red, podrías perder los fondos.
+        </p>
+
+        <!-- Paste your wallet below -->
+        <div class="mono" id="wallet">
+          TAwxf4DSMozYsDFgWASion7694KFGXTmXB
+        </div>
+
+        <div class="row">
+          <button class="btn secondary" type="button" onclick="copyText('wallet','msgWallet')">Copiar wallet</button>
+          <span class="hint" id="msgWallet"></span>
+        </div>
+
+        <div class="qr-wrap">
+          <img src="assets/qr-binance-usdt-trc20.png" alt="QR Binance (USDT TRC20)" loading="lazy" />
+        </div>
+
+        <div class="row">
+          <button class="btn secondary" type="button" onclick="openImage('assets/qr-binance-usdt-trc20.png')">
+            Ver QR en grande
+          </button>
+        </div>
+      </article>
+
+      <!-- Add more methods later: just copy another <article class="card"> ... -->
+      <article class="card add-more">
+        <h2>¿Otro método?</h2>
+        <p class="muted">
+          Esta página está lista para agregar más opciones (Nequi, Daviplata, Stripe, etc.).
+        </p>
+        <p class="muted small">
+          (Solo añade otra tarjeta como las de arriba.)
+        </p>
+      </article>
+
+    </section>
+
+    <footer class="footer">
+      <p class="muted small">
+        Gracias por apoyar Mobile Call Rejecter 💙
+      </p>
+    </footer>
+  </main>
+
+  <!-- Minimal JS (no third-party). -->
+  <script>
+    async function copyText(elementId, msgId) {
+      const el = document.getElementById(elementId);
+      const msg = document.getElementById(msgId);
+      const text = (el?.innerText || "").trim();
+
+      try {
+        await navigator.clipboard.writeText(text);
+        msg.textContent = "Copiado ✅";
+      } catch (e) {
+        msg.textContent = "No se pudo copiar. Copia manualmente.";
+      }
+
+      setTimeout(() => (msg.textContent = ""), 2000);
+    }
+
+    function openImage(src) {
+      window.open(src, "_blank", "noopener,noreferrer");
+    }
+  </script>
+</body>
+</html>
