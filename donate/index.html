@@ -4,79 +4,152 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Donate • Mobile Call Rejecter</title>
-  <meta name="description" content="Apoya el desarrollo de Mobile Call Rejecter con PayPal, Bancolombia o USDT (TRC20)." />
-  <link rel="stylesheet" href="styles.css" />
+  <meta name="description" content="Apoya el desarrollo de Mobile Call Rejecter: PayPal, Bancolombia y USDT TRC20." />
+  <link rel="stylesheet" href="./styles.css" />
 </head>
 
 <body>
+  <!-- Ambient futuristic background -->
+  <div class="bg">
+    <div class="grid"></div>
+    <div class="glow g1"></div>
+    <div class="glow g2"></div>
+    <div class="glow g3"></div>
+  </div>
+
   <header class="top">
-    <div class="brand">
-      <div class="logo">MCR</div>
-      <div class="titles">
-        <h1>Apoya el proyecto</h1>
-        <p>Tu donación mantiene la app viva, libre de spam y en mejora constante 💙</p>
+    <div class="shell">
+      <div class="hero card glass">
+        <div class="hero-left">
+          <div class="brand">
+            <div class="logo">MCR</div>
+            <div>
+              <h1>Support the build</h1>
+              <p class="muted">
+                Tu donación mantiene la app viva, libre de spam y en mejora constante 💙
+              </p>
+            </div>
+          </div>
+
+          <div class="chips">
+            <span class="chip">Mobile</span>
+            <span class="chip">Web</span>
+            <span class="chip">SRE / DevOps</span>
+            <span class="chip">Support</span>
+          </div>
+
+          <div class="hero-cta">
+            <a class="btn primary" href="https://www.paypal.com/donate/?hosted_button_id=PDC6L9BHDVUHJ" target="_blank" rel="noopener">
+              <!-- PayPal icon -->
+              <span class="ico" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none"><path d="M7.2 20h2.7a2 2 0 0 0 2-1.6l.4-2.2a2 2 0 0 1 2-1.6h.9c3.7 0 6.6-1.5 7.4-5.9.3-1.9.1-3.4-.9-4.6C22.6 2.7 21 2 18.8 2H9.6a2 2 0 0 0-2 1.7L5 18.1A1.6 1.6 0 0 0 6.6 20h.6Z" stroke="currentColor" stroke-width="1.6"/><path d="M8.6 14.2h2.6c3 0 5.3-1.2 5.9-4.8.2-1.5 0-2.6-.7-3.4C15.7 5.2 14.6 4.8 13 4.8H9.8" stroke="currentColor" stroke-width="1.6" opacity=".7"/></svg>
+              </span>
+              Donar con PayPal
+            </a>
+
+            <button class="btn ghost" type="button" onclick="scrollToMethods()">
+              Ver métodos
+              <span class="ico" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none"><path d="M12 5v14m0 0 6-6m-6 6-6-6" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </span>
+            </button>
+          </div>
+        </div>
+
+        <div class="hero-right">
+          <div class="stat">
+            <div class="stat-k">Objetivo</div>
+            <div class="stat-v">Mantener + mejorar</div>
+            <div class="stat-s">Infra, features y UX</div>
+          </div>
+          <div class="stat">
+            <div class="stat-k">Roadmap</div>
+            <div class="stat-v">Anti-spam</div>
+            <div class="stat-s">Más controles + analytics</div>
+          </div>
+          <div class="stat">
+            <div class="stat-k">Transparencia</div>
+            <div class="stat-v">Sin paywalls</div>
+            <div class="stat-s">La donación es opcional</div>
+          </div>
+        </div>
+
+        <!-- border glow -->
+        <div class="card-border"></div>
       </div>
     </div>
   </header>
 
-  <main class="container">
-    <!-- Future ad slot (optional) -->
-    <section class="ad-slot" aria-label="Ad slot (future)">
-      <!-- Reserved for future ads (e.g., AdSense). Keep empty for now. -->
+  <main class="shell" id="methods">
+    <section class="section-head">
+      <h2>Métodos de donación</h2>
+      <p class="muted">Diseño modular: puedes agregar más métodos copiando una card.</p>
     </section>
 
-    <!-- Methods grid: add more cards later easily -->
-    <section class="grid" aria-label="Métodos de donación">
-
-      <!-- PayPal -->
-      <article class="card">
-        <div class="card-head">
-          <h2>PayPal</h2>
-          <span class="tag">Recomendado</span>
+    <section class="cards">
+      <!-- PayPal card -->
+      <article class="card glass">
+        <div class="card-top">
+          <div class="title">
+            <span class="badge">Recomendado</span>
+            <h3>PayPal</h3>
+          </div>
+          <span class="mini-ico" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none"><path d="M7.2 20h2.7a2 2 0 0 0 2-1.6l.4-2.2a2 2 0 0 1 2-1.6h.9c3.7 0 6.6-1.5 7.4-5.9.3-1.9.1-3.4-.9-4.6C22.6 2.7 21 2 18.8 2H9.6a2 2 0 0 0-2 1.7L5 18.1A1.6 1.6 0 0 0 6.6 20h.6Z" stroke="currentColor" stroke-width="1.6"/></svg>
+          </span>
         </div>
-        <p class="muted">
-          Donación rápida y segura. Puedes usar tarjeta o saldo PayPal.
-        </p>
-        <a class="btn" href="https://www.paypal.com/donate/?hosted_button_id=PDC6L9BHDVUHJ" target="_blank" rel="noopener">
-          Donar con PayPal
+
+        <p class="muted">Rápido, seguro y global. Tarjeta o saldo PayPal.</p>
+
+        <a class="btn primary w100" href="https://www.paypal.com/donate/?hosted_button_id=PDC6L9BHDVUHJ" target="_blank" rel="noopener">
+          Ir a PayPal
         </a>
+
+        <div class="card-border"></div>
       </article>
 
-      <!-- Bancolombia QR -->
-      <article class="card">
-        <div class="card-head">
-          <h2>Bancolombia</h2>
-          <span class="tag ghost">QR</span>
+      <!-- Bancolombia QR card -->
+      <article class="card glass">
+        <div class="card-top">
+          <div class="title">
+            <span class="badge ghost">QR</span>
+            <h3>Bancolombia</h3>
+          </div>
+          <span class="mini-ico" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none"><path d="M4 20V8l8-4 8 4v12H4Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><path d="M9 20v-8h6v8" stroke="currentColor" stroke-width="1.6"/></svg>
+          </span>
         </div>
-        <p class="muted">Escanea el QR para donar desde tu app bancaria.</p>
+
+        <p class="muted">Escanea el QR desde tu app bancaria.</p>
 
         <div class="qr-wrap">
-          <img src="assets/qr-bancolombia.png" alt="QR Bancolombia" loading="lazy" />
+          <img src="./assets/qr-bancolombia.png" alt="QR Bancolombia" loading="lazy" />
         </div>
 
         <div class="row">
-          <button class="btn secondary" type="button" onclick="openImage('assets/qr-bancolombia.png')">
-            Ver en grande
-          </button>
+          <button class="btn ghost" type="button" onclick="openImage('assets/qr-bancolombia.png')">Ver en grande</button>
         </div>
+
+        <div class="card-border"></div>
       </article>
 
-      <!-- USDT TRC20 -->
-      <article class="card">
-        <div class="card-head">
-          <h2>USDT (TRC20)</h2>
-          <span class="tag warn">Verifica red</span>
+      <!-- USDT TRC20 card -->
+      <article class="card glass">
+        <div class="card-top">
+          <div class="title">
+            <span class="badge warn">Verifica red</span>
+            <h3>USDT (TRC20)</h3>
+          </div>
+          <span class="mini-ico" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none"><path d="M12 2l8 4v6c0 5-3.4 9.4-8 10-4.6-.6-8-5-8-10V6l8-4Z" stroke="currentColor" stroke-width="1.6"/><path d="M8 12h8" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+          </span>
         </div>
 
-        <p class="muted">
-          <strong>Importante:</strong> envía únicamente por la red <strong>TRC20</strong>.
-          Si envías por otra red, podrías perder los fondos.
-        </p>
-
-        <!-- Paste your wallet below -->
-        <div class="mono" id="wallet">
-          TAwxf4DSMozYsDFgWASion7694KFGXTmXB
+        <div class="callout warn">
+          <strong>Importante:</strong> envía únicamente por la red <strong>TRC20</strong>. Si usas otra red, podrías perder los fondos.
         </div>
+
+        <div class="mono" id="wallet">TAwxf4DSMozYsDFgWASion7694KFGXTmXB</div>
 
         <div class="row">
           <button class="btn secondary" type="button" onclick="copyText('wallet','msgWallet')">Copiar wallet</button>
@@ -84,38 +157,37 @@
         </div>
 
         <div class="qr-wrap">
-          <img src="assets/qr-binance-usdt-trc20.png" alt="QR Binance (USDT TRC20)" loading="lazy" />
+          <img src="./assets/qr-binance-usdt-trc20.png" alt="QR Binance (USDT TRC20)" loading="lazy" />
         </div>
 
         <div class="row">
-          <button class="btn secondary" type="button" onclick="openImage('assets/qr-binance-usdt-trc20.png')">
-            Ver QR en grande
-          </button>
+          <button class="btn ghost" type="button" onclick="openImage('assets/qr-binance-usdt-trc20.png')">Ver QR en grande</button>
         </div>
-      </article>
 
-      <!-- Add more methods later: just copy another <article class="card"> ... -->
-      <article class="card add-more">
-        <h2>¿Otro método?</h2>
-        <p class="muted">
-          Esta página está lista para agregar más opciones (Nequi, Daviplata, Stripe, etc.).
-        </p>
-        <p class="muted small">
-          (Solo añade otra tarjeta como las de arriba.)
-        </p>
+        <div class="card-border"></div>
       </article>
 
     </section>
 
     <footer class="footer">
-      <p class="muted small">
-        Gracias por apoyar Mobile Call Rejecter 💙
-      </p>
+      <div class="foot glass">
+        <div>
+          <div class="foot-title">Gracias por apoyar 💙</div>
+          <div class="muted small">Mobile Call Rejecter • Infra / Web / Mobile • Hecho con foco en privacidad</div>
+        </div>
+        <a class="btn ghost" href="https://www.paypal.com/donate/?hosted_button_id=PDC6L9BHDVUHJ" target="_blank" rel="noopener">
+          Donar ahora
+        </a>
+        <div class="card-border"></div>
+      </div>
     </footer>
   </main>
 
-  <!-- Minimal JS (no third-party). -->
   <script>
+    function scrollToMethods() {
+      document.getElementById('methods').scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+
     async function copyText(elementId, msgId) {
       const el = document.getElementById(elementId);
       const msg = document.getElementById(msgId);
@@ -127,7 +199,6 @@
       } catch (e) {
         msg.textContent = "No se pudo copiar. Copia manualmente.";
       }
-
       setTimeout(() => (msg.textContent = ""), 2000);
     }
 
